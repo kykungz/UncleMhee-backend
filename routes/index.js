@@ -14,38 +14,39 @@ router.post('/taxi', (req, res, next) => {
     roomNumber: Math.round(Math.random() * 200),
     done: false
   })
-
+  console.log(ref)
   setTimeout(() => {
-    ref.remove()
+    ref.update({ done: true })
   }, (Math.random() * 10 + 20) * 1000)
-
   res.send({ success: true })
 })
 
-router.get('/print', (req, res, next) => {
+router.post('/printing', (req, res, next) => {
+  const { printing } = req.body
   const ref = firebase.database().ref('/scb').push({
-    catagory: 'print',
-    content: ''
+    catagory: 'printing',
+    content: printing,
+    roomNumber: Math.round(Math.random() * 200),
+    done: false
   })
 
   setTimeout(() => {
-    ref.remove()
-  }, (Math.random() * 10) * 1000)
-
+    ref.update({ done: true })
+  }, (Math.random() * 10 + 20) * 1000)
   res.send({ success: true })
 })
 
 router.post('/fix', (req, res, next) => {
   const { fix } = req.body
   const ref = firebase.database().ref('/scb').push({
-    catagory: 'fix',
+    catagory: 'repair',
     content: fix,
     roomNumber: Math.round(Math.random() * 200),
     done: false
   })
 
   setTimeout(() => {
-    ref.remove()
+    ref.update({ done: true })
   }, (Math.random() * 10 + 20) * 1000)
 
   res.send({ success: true })
@@ -61,13 +62,13 @@ router.post('/report', (req, res, next) => {
   })
 
   setTimeout(() => {
-    ref.remove()
+    ref.update({ done: true })
   }, (Math.random() * 10 + 20) * 1000)
 
   res.send({ success: true })
 })
 
-router.post('/service', (req, res, next) => {
+router.post('/delivery', (req, res, next) => {
   const { service } = req.body
   const ref = firebase.database().ref('/scb').push({
     catagory: 'service',
@@ -77,13 +78,13 @@ router.post('/service', (req, res, next) => {
   })
 
   setTimeout(() => {
-    ref.remove()
+    ref.update({ done: true })
   }, (Math.random() * 10 + 20) * 1000)
 
   res.send({ success: true })
 })
 
-router.post('/bill', (req, res, next) => {
+router.post('/billing', (req, res, next) => {
   const { bill } = req.body
   const ref = firebase.database().ref('/scb').push({
     catagory: 'bill',
@@ -93,7 +94,7 @@ router.post('/bill', (req, res, next) => {
   })
 
   setTimeout(() => {
-    ref.remove()
+    ref.update({ done: true })
   }, (Math.random() * 10 + 20) * 1000)
 
   res.send({ success: true })
