@@ -14,10 +14,7 @@ router.post('/taxi', (req, res, next) => {
     roomNumber: Math.round(Math.random() * 200),
     done: false
   })
-  console.log(ref)
-  setTimeout(() => {
-    ref.update({ done: true })
-  }, (Math.random() * 10 + 20) * 1000)
+  
   res.send({ success: true })
 })
 
@@ -30,9 +27,6 @@ router.post('/printing', (req, res, next) => {
     done: false
   })
 
-  setTimeout(() => {
-    ref.update({ done: true })
-  }, (Math.random() * 10 + 20) * 1000)
   res.send({ success: true })
 })
 
@@ -44,10 +38,6 @@ router.post('/fix', (req, res, next) => {
     roomNumber: Math.round(Math.random() * 200),
     done: false
   })
-
-  setTimeout(() => {
-    ref.update({ done: true })
-  }, (Math.random() * 10 + 20) * 1000)
 
   res.send({ success: true })
 })
@@ -61,10 +51,6 @@ router.post('/report', (req, res, next) => {
     done: false
   })
 
-  setTimeout(() => {
-    ref.update({ done: true })
-  }, (Math.random() * 10 + 20) * 1000)
-
   res.send({ success: true })
 })
 
@@ -77,10 +63,6 @@ router.post('/delivery', (req, res, next) => {
     done: false
   })
 
-  setTimeout(() => {
-    ref.update({ done: true })
-  }, (Math.random() * 10 + 20) * 1000)
-
   res.send({ success: true })
 })
 
@@ -92,10 +74,6 @@ router.post('/billing', (req, res, next) => {
     roomNumber: Math.round(Math.random() * 200),
     done: false
   })
-
-  setTimeout(() => {
-    ref.update({ done: true })
-  }, (Math.random() * 10 + 20) * 1000)
 
   res.send({ success: true })
 })
