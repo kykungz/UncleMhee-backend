@@ -7,6 +7,7 @@ router.get('/', (req, res, next) => {
 })
 
 router.get('/taxi', (req, res, next) => {
+  console.log(req.body)
   const ref = firebase.database().ref('/scb').push({
     catagory: 'taxi',
     content: ''
