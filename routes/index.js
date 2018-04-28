@@ -6,10 +6,11 @@ router.get('/', (req, res, next) => {
   res.render('index', { title: 'Express' })
 })
 
-router.get('/taxi', (req, res, next) => {
+router.post('/taxi', (req, res, next) => {
+  const { location } = req.body
   const ref = firebase.database().ref('/scb').push({
     catagory: 'taxi',
-    content: req.headers.body,
+    content: location,
     roomNumber: Math.round(Math.random() * 200),
     done: false
   })
@@ -34,10 +35,11 @@ router.get('/print', (req, res, next) => {
   res.send({ success: true })
 })
 
-router.get('/fix', (req, res, next) => {
+router.post('/fix', (req, res, next) => {
+  const { fix } = req.body
   const ref = firebase.database().ref('/scb').push({
     catagory: 'fix',
-    content: req.headers.body,
+    content: fix,
     roomNumber: Math.round(Math.random() * 200),
     done: false
   })
@@ -49,10 +51,11 @@ router.get('/fix', (req, res, next) => {
   res.send({ success: true })
 })
 
-router.get('/report', (req, res, next) => {
+router.post('/report', (req, res, next) => {
+  const { report } = req.body
   const ref = firebase.database().ref('/scb').push({
     catagory: 'report',
-    content: req.headers.body,
+    content: report,
     roomNumber: Math.round(Math.random() * 200),
     done: false
   })
@@ -64,10 +67,11 @@ router.get('/report', (req, res, next) => {
   res.send({ success: true })
 })
 
-router.get('/service', (req, res, next) => {
+router.post('/service', (req, res, next) => {
+  const { service } = req.body
   const ref = firebase.database().ref('/scb').push({
     catagory: 'service',
-    content: req.headers.body,
+    content: service,
     roomNumber: Math.round(Math.random() * 200),
     done: false
   })
@@ -79,10 +83,11 @@ router.get('/service', (req, res, next) => {
   res.send({ success: true })
 })
 
-router.get('/bill', (req, res, next) => {
+router.post('/bill', (req, res, next) => {
+  const { bill } = req.body
   const ref = firebase.database().ref('/scb').push({
     catagory: 'bill',
-    content: req.headers.body,
+    content: bill,
     roomNumber: Math.round(Math.random() * 200),
     done: false
   })
