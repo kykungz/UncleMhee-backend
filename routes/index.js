@@ -17,7 +17,7 @@ router.post('/taxi', (req, res, next) => {
 
   setTimeout(() => {
     ref.remove()
-  }, (Math.random() * 8 + 10) * 1000)
+  }, (Math.random() * 10 + 20) * 1000)
 
   res.send({ success: true })
 })
@@ -30,7 +30,7 @@ router.get('/print', (req, res, next) => {
 
   setTimeout(() => {
     ref.remove()
-  }, (Math.random() * 8) * 1000)
+  }, (Math.random() * 10) * 1000)
 
   res.send({ success: true })
 })
@@ -46,7 +46,7 @@ router.post('/fix', (req, res, next) => {
 
   setTimeout(() => {
     ref.remove()
-  }, (Math.random() * 8 + 10) * 1000)
+  }, (Math.random() * 10 + 20) * 1000)
 
   res.send({ success: true })
 })
@@ -62,7 +62,7 @@ router.post('/report', (req, res, next) => {
 
   setTimeout(() => {
     ref.remove()
-  }, (Math.random() * 8 + 10) * 1000)
+  }, (Math.random() * 10 + 20) * 1000)
 
   res.send({ success: true })
 })
@@ -78,7 +78,7 @@ router.post('/service', (req, res, next) => {
 
   setTimeout(() => {
     ref.remove()
-  }, (Math.random() * 8 + 10) * 1000)
+  }, (Math.random() * 10 + 20) * 1000)
 
   res.send({ success: true })
 })
@@ -94,7 +94,7 @@ router.post('/bill', (req, res, next) => {
 
   setTimeout(() => {
     ref.remove()
-  }, (Math.random() * 8 + 10) * 1000)
+  }, (Math.random() * 10 + 20) * 1000)
 
   res.send({ success: true })
 })
