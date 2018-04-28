@@ -30,11 +30,12 @@ router.post('/printing', (req, res, next) => {
   res.send({ success: true })
 })
 
-router.post('/fix', (req, res, next) => {
-  const { fix } = req.body
+router.post('/repair', (req, res, next) => {
+  const { fix, detail } = req.body
   const ref = firebase.database().ref('/scb').push({
     catagory: 'repair',
     content: fix,
+    detail,
     roomNumber: Math.round(Math.random() * 200),
     done: false
   })
@@ -55,10 +56,10 @@ router.post('/report', (req, res, next) => {
 })
 
 router.post('/delivery', (req, res, next) => {
-  const { service } = req.body
+  const { delivery } = req.body
   const ref = firebase.database().ref('/scb').push({
-    catagory: 'service',
-    content: service,
+    catagory: 'delivery',
+    content: delivery,
     roomNumber: Math.round(Math.random() * 200),
     done: false
   })
@@ -67,10 +68,10 @@ router.post('/delivery', (req, res, next) => {
 })
 
 router.post('/billing', (req, res, next) => {
-  const { bill } = req.body
+  const { billing } = req.body
   const ref = firebase.database().ref('/scb').push({
-    catagory: 'bill',
-    content: bill,
+    catagory: 'billing',
+    content: billing,
     roomNumber: Math.round(Math.random() * 200),
     done: false
   })
